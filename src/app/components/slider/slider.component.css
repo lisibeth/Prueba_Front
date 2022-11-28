@@ -1,0 +1,50 @@
+
+
+.slider{
+  width: 100%;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+  justify-content: center;
+  display: flex;
+}
+
+.slider .slider-track{
+  display: flex;
+  justify-content: space-around;
+  animation: cambio 30s infinite alternate linear;
+
+}
+
+
+.slide{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 .5rem;
+}
+
+ .slide img{
+  max-width: 30px ;
+  max-height: 40px;
+}
+
+.slide span{
+ font-size: 10px;
+ font-weight: bold;
+}
+
+
+@keyframes cambio {
+  0% {margin-left: 0;}
+
+
+  50% {margin-left: -100%;}
+
+  100% {margin-left: 0%;}
+}
+
+
+

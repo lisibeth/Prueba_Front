@@ -1,0 +1,21 @@
+
+
+
+
+  <div class="slider">
+
+    <div class="slider-track">
+
+      <div *ngFor="let coin of coins" class="slide">
+        <img [src]="coin.image" alt="{{coin.name}}<"><br>
+        <span>{{coin.current_price}}</span>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+

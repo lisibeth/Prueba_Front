@@ -1,0 +1,66 @@
+
+
+.btn{
+
+	outline: none;
+	border: none;
+	background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+	background-size: 200%;
+	color: #fff;
+
+}
+
+.logo{
+
+	width: 80px;
+	display: flex;
+	justify-items: center;
+	align-items: center;
+
+}
+
+.logo h1 b{
+	color: #38d39f;
+}
+
+.titulo{
+text-align: center;
+font-family: Arial;
+font-size: 50px;
+COLOR: #0d0e0d;
+/*text-shadow: 0px 0px 5px #06da93 */
+}
+
+
+
+/*Estilo del contenido del articulo
+ container-contenido del articulo */
+
+
+ .table {
+  width: 80%;
+  height: 300%;
+  table-layout: fixed;
+  border-radius: 1%;
+
+
+  }
+
+  .table img{
+   width: 2rem;
+
+  }
+
+  thead{
+    background-color: #faf6f6;
+  }
+
+
+
+  tbody tr:hover{
+    background-color: #faf6f6;
+  }
+
+
+
+

@@ -1,0 +1,77 @@
+<!--Importo el slider-->
+<app-slider></app-slider>
+
+<!--Aqui esta el menu con el BOTON-->
+<div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-around py-3 mb-4 border-bottom">
+        <div class="logo col-md-6">
+            <h1>Chin<b>chin</b></h1>
+        </div>
+      <div class="col-md-3 text-end">
+        <button type="button" class="btn btn-outline-primary me-2" (click)="salir()" >Salir</button>
+      </div>
+    </header>
+
+    <!--Indico el saludo-->
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h1 class="titulo">Bienvenido</h1>
+        <!--Aqui estamos imprimiendo el nombre del usuario que ingresa IMportante colocar el Signo de ? de lo contrario
+        da error-->
+        <p class="fs-5 text-muted">{{dataUser?.email}}</p>
+      </div>
+  </div><br><br>
+
+
+
+<!--Contenido de la pagina-->
+
+<div class="row featurette">
+  <div class="col-md-7">
+    <h2 style="text-align: center ;" class="featurette-heading fw-normal lh-1">Bille<span class="text-muted">tera.</span></h2>
+    <div class="container"><br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>*</th>
+            <th>Moneda</th>
+            <th>Saldo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579" alt=""></td>
+            <td>Btc</td>
+            <td>0,234555</td>
+          </tr>
+          <tr>
+            <td><img src="https://assets.coingecko.com/coins/images/9576/large/BUSD.png?1568947766" alt=""> </td>
+            <td>BUSD</td>
+            <td>0,234555</td>
+          </tr>
+          <tr>
+            <td><img src="https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880" alt=""> </td>
+            <td>Ethereum.</td>
+            <td>40,234555</td>
+          </tr>
+          <tr>
+            <td><img src="https://assets.coingecko.com/coins/images/325/large/Tether.png?1668148663" alt=""> </td>
+            <td>Ether</td>
+            <td>4,234555</td>
+          </tr>
+          <tr>
+            <td><img src="../../../assets/img/petro.png"></td>
+            <td>Petro</td>
+            <td>4,234555</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!--Aqui esta la caja para validar el alza de la monedas con su frafico-->
+  <div class="col-md-5">
+    <iframe src="https://criptolatino.com/cryptowidgets/top-criptomonedas/?theme=white" style="border:none;width:100%;height:400px;" frameBorder="0" scrolling="no sandbox="allow-same-origin onload="this.style.height=(this.contentWindow.document.body.scrollHeight)+'px';"></iframe>
+  </div>
+</div><br><br>
+
+<!--Agregamos el footer-->
+<app-footer></app-footer>

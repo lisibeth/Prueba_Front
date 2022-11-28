@@ -1,0 +1,89 @@
+
+<!--Aqui vamos a colocar el formulario de registro-->
+
+
+<img class="wave" src="../../../assets/img/wave.png"> <!--Imagen de la onda verde-->
+<div class="container">
+  <div class="img">
+    <img src="../../../assets/img/bg.svg"> <!--Imagen del hombre sentado-->
+  </div>
+  <div class="login-content">
+       <div class="input-div one">
+        <div class="i">
+          <i class="fas fa-user"></i>
+        </div>
+      </div>
+  <div >
+<div>
+    <div *ngIf="!loading" > <!--Colocamos la propiedad de *ngIf="false" para ocultar el spinner y que no este dando vueltas y solo salga cuando se necesite-->
+        <!--Bajamos la ruta hasta llegar a la carpeta-->
+        <img class="logo" src="../../../assets/img/sonrisa.jpg.png" alt="login">
+        <h1>Registro</h1> <br>
+        <form (ngSubmit)="registrar()" [formGroup]="registrarUsuario"> <!--Aqui hacemos la validacion del formulario-->
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" formControlName="email"  placeholder="name@example.com">
+                <label>Email</label>
+                 <!--Validacion-->
+                 <span *ngIf="registrarUsuario.get('email')?.hasError('required') && registrarUsuario.get('email')?.touched" class="text-danger errorLabel">
+                  El <strong>correo</strong> es requerido
+                </span>
+                <!--Segunda Validacion-->
+                <span *ngIf="registrarUsuario.get('email')?.hasError('email') && registrarUsuario.get('email')?.touched" class="text-danger errorLabel">
+                  El <strong>correo</strong> es invalido
+                </span>
+              <!--Campo de la clave-->
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" formControlName="password" placeholder="Password">
+                <label>Password</label>
+                <!--Validacion de la clave-->
+                <span *ngIf="registrarUsuario.get('password')?.hasError('required') && registrarUsuario.get('password')?.touched" class="text-danger errorLabel">
+                  La <strong>password</strong> es invalida
+                </span>
+                <!--Validacion de 6 caracteres-->
+                <span *ngIf="registrarUsuario.get('password')?.hasError('minlength') && registrarUsuario.get('password')?.touched" class="text-danger errorLabel">
+                  El <strong>password</strong> debe tener 6 caracteres
+                </span>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" formControlName="repetirPassword" placeholder="Repetir Password">
+                <label>Repetir Password</label>
+              </div>
+              <div class="d-grid gap-2 mt-3">
+                <!--Vamos a desabilitar el boton hasta que el usuario de aceptar-->
+                <button class="btn btn-dark btn-lg" [disabled]="registrarUsuario.invalid" type="submit">Aceptar</button>
+              </div>
+              <a style="text-align:center;" class="mt-3" routerLink="/login">Volver</a>
+        </form>
+    </div>
+    <!--Aqui rendirizamos el spinner// Es decir incluimos-->
+    <app-spinner *ngIf="loading"></app-spinner>
+</div>
+
+<!--
+  Entendiendo el codigo:
+
+  A diferencia de php que por el metodo post haciamos una validacion para verificar la informacion
+  del formulario y lo direccionabamos a un archivo en este caso pasamos una propiedad propia de Angular
+  que es FormGroup y le pasamos el atributo se podria decir de la clase creada por dependencia en el constructor
+   en este caso es registrousuario / 
+
+   Luego con los input en ves de validar por el Id lo hacemos con la propiedad FormControlName y colocamos
+   el campo a requerir en este caso son: email, password y repetirPassword
+
+   En el caso del Boton, al hacer clip este va a ejecutar un evento que esta en la etiqueta FORM
+   (ngSubmit)="registrar"
+
+  Agrege FIREBASE para autenticar la aplicacion.
+
+  Validacion 
+
+   <span *ngIf="registrarUsuario.get('email')?.hasError('required') && registrarUsuario.get('email')?.touched" class="text-danger errorLabel">
+                  El <strong>correo</strong> es requerido
+                </span>
+
+  Aqui creamos un propiedad donde se nos muestre en un mensaje en rojo si el usuario no coloca el correo que es requerido
+  pero solo cuando el usuario salte el campo del correo es que le saldra ese mensaje
+  
+
+-->
